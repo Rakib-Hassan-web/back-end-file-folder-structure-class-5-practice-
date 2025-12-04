@@ -1,7 +1,10 @@
 const express = require('express')
+const dbconnect = require('./dbConfig')
 const app = express()
 
 app.use(express.json())
+
+dbconnect()
 
 
 app.get('/', (req, res) => {
