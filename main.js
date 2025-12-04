@@ -1,10 +1,12 @@
 const express = require('express')
 const dbconnect = require('./dbConfig')
+const UserSchema = require('./models/UserSchema')
 const app = express()
 
 app.use(express.json())
 
 dbconnect()
+UserSchema()
 
 
 app.get('/', (req, res) => {
