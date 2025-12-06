@@ -1,11 +1,32 @@
+const UserSchema = require("../models/UserSchema")
 
 
 
 
-const registration = ( req,res )=>{
+const registration =  async( req,res )=>{
 
-    res.send('rakib here reg')
-}
+
+  const { name,email,password } = req.body
+
+
+   
+
+
+  const newuser = new UserSchema({
+      name,email,password
+    })
+    
+      await newuser.save()
+
+  
+  const existinguser =  await UserSchema.findOne({email})
+  if(existinguser) res.send(' manush ache aida dia ' )
+  
+    
+
+
+    res.send(' reg done ' )}
+
 
 
 
