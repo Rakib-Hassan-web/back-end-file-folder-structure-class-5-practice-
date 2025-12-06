@@ -1,6 +1,6 @@
 
 const express = require('express')
-const { registration } = require('../controller/authcontroller')
+const { registration, login } = require('../controller/authcontroller')
 
 
 const routerr =express.Router()
@@ -14,6 +14,7 @@ routerr.get('/', (req, res) => {
 
 routerr.post('/registration', registration)
 
+routerr.post('/login', login)
 
 
 

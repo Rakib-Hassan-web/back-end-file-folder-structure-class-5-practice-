@@ -8,4 +8,11 @@ const registration = ( req,res )=>{
 }
 
 
-module.exports= { registration}
+
+const login = ( req,res )=>{
+
+    res.send(' login')
+}
+
+
+module.exports= { registration, login}
