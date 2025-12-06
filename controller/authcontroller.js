@@ -9,8 +9,9 @@ const registration =  async( req,res )=>{
   const { name,email,password } = req.body
 
 
-   
 
+        const existinguser =  await UserSchema.findOne({email})
+        if(existinguser) return res.status(400).send(' manush ache aida dia ' )
 
   const newuser = new UserSchema({
       name,email,password
@@ -19,13 +20,11 @@ const registration =  async( req,res )=>{
       await newuser.save()
 
   
-  const existinguser =  await UserSchema.findOne({email})
-  if(existinguser) res.send(' manush ache aida dia ' )
   
     
 
 
-    res.send(' reg done ' )}
+    res.status(200).send(' reg done ' )}
 
 
 
