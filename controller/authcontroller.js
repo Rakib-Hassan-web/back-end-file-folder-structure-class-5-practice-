@@ -49,7 +49,7 @@ const login = async (req, res) => {
     if(!exisuser) return res.status(400).send('user not exist')
 
 
-      if( exisuser.password !== password) return res.send ( "pass wrong")
+        if( exisuser.password !== password) return res.send ( "pass wrong")
 
 
 
