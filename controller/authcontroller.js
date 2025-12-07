@@ -68,7 +68,7 @@ if(!password) return res.status(400).send('password is required')
 
       const ismatch = await exisuser.comparePassword(password);
 
-
+      if(!ismatch) return res.status(400).send('password is incorrect')
 
 
 
