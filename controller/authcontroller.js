@@ -74,6 +74,8 @@ if(!password) return res.status(400).send('password is required')
 
 
 
+res.status(200).send({ success :"user login done" , exisuser})
+
 
 
 
