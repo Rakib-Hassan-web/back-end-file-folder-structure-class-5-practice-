@@ -13,11 +13,16 @@ const registration = async (req, res) => {
     } = req.body
 
 
+if(!name) return res.status(400).send('name is required')
+if(!email) return res.status(400).send('email is required')
+if(!password) return res.status(400).send('password is required')
+
+
 
     const existinguser = await UserSchema.findOne({
         email
     })
-    if (existinguser) return res.status(400).send(' manush ache aida dia ')
+    if (existinguser) return res.status(400).send(' User already exist ')
 
     const newuser = new UserSchema({
         name,
@@ -32,7 +37,7 @@ const registration = async (req, res) => {
 
 
 
-    res.status(200).send(' reg done ')
+    res.status(200).send(' registration successful ')
 }
 
 
@@ -66,5 +71,5 @@ res.status(200).send('user login done')
 
 module.exports = {
     registration,
-    logi
+    login
 }
