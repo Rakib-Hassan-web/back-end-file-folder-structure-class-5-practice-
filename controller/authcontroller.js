@@ -66,14 +66,13 @@ if(!password) return res.status(400).send('password is required')
     if(!exisuser) return res.status(400).send('user not exist')
 
 
-        if( exisuser.password !== password) return res.send ( "pass wrong")
+      const ismatch = await exisuser.comparePassword(password);
 
 
 
 
 
 
-res.status(200).send('user login done')
 
 
 
