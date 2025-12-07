@@ -66,5 +66,5 @@ res.status(200).send('user login done')
 
 module.exports = {
     registration,
-    login
+    logi
 }
