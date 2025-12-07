@@ -1,5 +1,6 @@
 const express = require('express')
 const dbconnect = require('./dbConfig')
+require('dotenv').config()
 const UserSchema = require('./models/UserSchema')
 const routerr = require('./routes')
 const app = express()

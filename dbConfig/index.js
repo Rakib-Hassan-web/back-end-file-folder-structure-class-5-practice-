@@ -3,7 +3,7 @@
 const mongoose = require('mongoose')
 
 const dbconnect =()=>{
-    return mongoose.connect('mongodb+srv://secondwork:tzQJs5WU9fV1tfBw@cluster0.7ooynjm.mongodb.net/secondwork?appName=Cluster0')
+    return mongoose.connect(process.env.DATABASE_URL)
   .then(() => console.log(' DB Connected!'));
 
 }
