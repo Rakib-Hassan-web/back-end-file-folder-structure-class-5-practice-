@@ -47,6 +47,8 @@ const login = async (req, res) => {
 
     const { email,password } = req.body
 
+    if(!email) return res.status(400).send('email is required')
+if(!password) return res.status(400).send('password is required')
 
     const exisuser = await UserSchema.findOne({ email })
 
