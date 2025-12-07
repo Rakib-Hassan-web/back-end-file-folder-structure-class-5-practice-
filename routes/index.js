@@ -1,20 +1,27 @@
 
 const express = require('express')
-const { registration, login } = require('../controller/authcontroller')
+
+const authroute = require('./auth')
+
+const ShortnerRoute = require('./shortner')
+
 
 
 const routerr =express.Router()
 
 
-routerr.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// routerr.get('/', (req, res) => {
+//   res.send('Hello World!')
+// })
 
 
 
-routerr.post('/registration', registration)
+routerr.use('/auth', authroute)
 
-routerr.post('/login', login)
+routerr.use('/shortner', ShortnerRoute)
+
+
+
 
 
 
