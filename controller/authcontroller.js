@@ -1,4 +1,5 @@
 const UserSchema = require("../models/UserSchema")
+const { isvalidEmail, isvalidpPasswprd } = require("../utils/validations")
 
 
 
@@ -15,8 +16,17 @@ const registration = async (req, res) => {
 
 if(!name) return res.status(400).send('name is required')
 if(!email) return res.status(400).send('email is required')
+
+
+
+    if(!isvalidEmail(email)) return res.status(400).send('Enter a valid email')
+
 if(!password) return res.status(400).send('password is required')
 
+
+    if(!isvalidEmail(email)) return res.status(400).send('Enter a valid email')
+
+    if(!isvalidpPasswprd(password)) return res.status(400).send('Enter a valid password')
 
 
     const existinguser = await UserSchema.findOne({
