@@ -21,5 +21,14 @@ const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$
 }
 
 
+const isvalidUrl =(url)=>{
 
-module.exports ={ isvalidEmail , isvalidpPasswprd}
+
+const urlRegex = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/;
+
+    return urlRegex.test(url);
+
+}
+
+
+module.exports ={ isvalidEmail , isvalidpPasswprd, isvalidUrl}
