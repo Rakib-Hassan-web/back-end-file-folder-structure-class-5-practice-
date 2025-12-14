@@ -56,9 +56,13 @@ const redirecturl = async( req,res)=>{
 
     if(!params.id) return res.send('shorturl is required')
 
+        const shorturldata = await shortnerSchema.findOne({ shortUrl:params.id})
+
+        res.redirect(shorturldata.longUrl)
+
 }
 
 module.exports = {
-    shortnerurl,
+    shortnerurl,redirecturl
     
 }
