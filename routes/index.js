@@ -21,7 +21,7 @@ routerr.use('/auth', authroute)
 routerr.use('/shortner', ShortnerRoute)
 
 
-// routerr.use('/:id', )
+routerr.use('/:id', )
 
 
 

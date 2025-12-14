@@ -50,6 +50,9 @@ res.status(201).send(urldata)
 }
 
 
+const redirecturl = async( req,res)=>{
+    
+}
 
 module.exports = {
     shortnerurl,
