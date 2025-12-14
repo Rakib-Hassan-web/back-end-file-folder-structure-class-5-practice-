@@ -13,5 +13,3 @@ const routerr =express.Router()
 
 
 
-
-module.exports = routerr
