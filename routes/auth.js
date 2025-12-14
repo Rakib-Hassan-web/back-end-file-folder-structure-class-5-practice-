@@ -7,9 +7,7 @@ const { registration, login } = require('../controller/authcontroller')
 const routerr =express.Router()
 
 
-// routerr.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
+
 
 
 
