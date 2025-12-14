@@ -51,7 +51,11 @@ res.status(201).send(urldata)
 
 
 const redirecturl = async( req,res)=>{
-    
+
+    const params = req.params
+
+    if(!params.id) return res.send('shorturl is required')
+
 }
 
 module.exports = {
