@@ -17,10 +17,6 @@ routerr.get('/', (req, res) => {
 
 
 
-routerr.use('/auth', authroute)
-
-
-
 
 
 
