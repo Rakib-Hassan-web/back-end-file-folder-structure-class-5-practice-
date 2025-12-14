@@ -87,6 +87,9 @@ console.log(token)
 
     res.status(200).send({
         success: "user login done",
+        exisuser,
+
+        Token :token
         
     })
 
