@@ -85,6 +85,8 @@ var token = jwt.sign({ id: exisuser._id , email: exisuser.email }, process.env.J
 
 console.log(token)
 
+ res.cookie("Token" , token)
+
     res.status(200).send({
         success: "user login done",
         exisuser,
