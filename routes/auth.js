@@ -11,9 +11,6 @@ const routerr =express.Router()
 
 
 
-routerr.post('/registration', registration)
-
-routerr.post('/login', login)
 
 
 
