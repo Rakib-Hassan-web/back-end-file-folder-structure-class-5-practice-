@@ -62,7 +62,3 @@ const redirecturl = async( req,res)=>{
 
 }
 
-module.exports = {
-    shortnerurl,redirecturl
-    
-}

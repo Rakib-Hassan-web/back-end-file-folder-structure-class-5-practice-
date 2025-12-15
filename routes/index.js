@@ -11,7 +11,9 @@ const { redirecturl } = require('../controller/shorturlController')
 const routerr =express.Router()
 
 
-
+routerr.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 
 
