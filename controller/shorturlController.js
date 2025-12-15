@@ -40,6 +40,7 @@ const urldata = new shortnerSchema({
 urldata.save()
 
 
+res.status(201).send(urldata)
 
 
 
