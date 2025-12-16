@@ -29,6 +29,7 @@ const shortnerurl = async (req, res) => {
 
     const token = req.cookies
 
+    console.log("token " , token)
 
     if (!longUrl) return res.status(400).send('longUrl is required')
     if (!isvalidUrl(longUrl)) return res.status(400).send('Invalid URL')

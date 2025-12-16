@@ -83,7 +83,7 @@ const login = async (req, res) => {
 
 var token = jwt.sign({ id: exisuser._id , email: exisuser.email }, process.env.JWT_SEC);
 
-console.log(token)
+
 
  res.cookie("Token" , token)
 
