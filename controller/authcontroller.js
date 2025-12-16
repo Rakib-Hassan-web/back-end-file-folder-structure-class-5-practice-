@@ -83,14 +83,12 @@ const login = async (req, res) => {
 
 const token = jwt.sign({ id: exisuser._id , email: exisuser.email }, process.env.JWT_SEC);
 
+const verifytoken =jwt.verify (token , process.env.JWT_SEC)
 
 
 
 
- 
- res.cookie("Token" , verifytoken)
-
- 
+ res.cookie("Token" , verifytoken) 
 
     res.status(200).send({
         success: "user login done",
