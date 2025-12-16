@@ -27,7 +27,7 @@ const shortnerurl = async (req, res) => {
 
     const {longUrl} = req.body
 
-    const token = req.cookies
+    const token = req.cookies.Token
 
     console.log("token " , token)
 
