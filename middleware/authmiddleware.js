@@ -10,8 +10,6 @@ const authmiddleware = (req, res, next) => {
     //   return res.status(401).json({ message: "No token found" });
     // }
 
-    const decoded = verifyToken(token);
-    console.log( token);
      
     
 
