@@ -1,17 +1,25 @@
+const { verifyToken } = require('../utils/authontication');
 
-const jwt = require('jsonwebtoken');
+const authmiddleware = (req, res, next) => {
+  try {
 
+    
 
-const  authmiddleware = ( req,res,next)=>{
-    const token = req.cookies.Token
- 
-   console.log(token);
-   
+    const token = req.cookies.Token; 
+    // if (!token) {
+    //   return res.status(401).json({ message: "No token found" });
+    // }
 
-   next()
-   
-    // console.log("token " , verifytoken)
-}
+    const decoded = verifyToken(token);
+    console.log( token);
+     
+    
 
+    // req.user = decoded;
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+};
 
-module.exports ={authmiddleware}
+module.exports = { authmiddleware };

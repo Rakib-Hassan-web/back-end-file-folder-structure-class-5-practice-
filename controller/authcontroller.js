@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken');
 const {
     isvalidEmail,
     isvalidpPasswprd
-} = require("../utils/validations")
+} = require("../utils/validations");
+const { generateAccTkn } = require("../utils/authontication");
 
 
 
@@ -81,14 +82,17 @@ const login = async (req, res) => {
 
 
 
-const token = jwt.sign({ id: exisuser._id , email: exisuser.email }, process.env.JWT_SEC);
-
-const verifytoken =jwt.verify (token , process.env.JWT_SEC)
 
 
 
+  const token = generateAccTkn({ id: exisuser._id , email: exisuser.email }, process.env.JWT_SEC);
 
- res.cookie("Token" , verifytoken) 
+     res.cookie("Token" , token) 
+     
+    
+
+
+
 
     res.status(200).send({
         success: "user login done",
